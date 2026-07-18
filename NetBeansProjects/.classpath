@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="IntraNetProject/src/java"/>
+	<classpathentry kind="lib" path="IntraNetProject/build/web/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar"/>
+	<classpathentry kind="lib" path="IntraNetProject/build/web/WEB-INF/lib/postgresql-42.7.12.jar"/>
+	<classpathentry kind="lib" path="Librairy/jakarta.servlet-api-5.0.0.jar"/>
+	<classpathentry kind="lib" path="Librairy/postgresql-42.7.12.jar"/>
+	<classpathentry kind="output" path="IntraNetProject/build/web/WEB-INF/classes"/>
+</classpath>
