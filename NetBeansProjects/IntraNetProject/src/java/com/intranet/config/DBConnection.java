@@ -9,7 +9,7 @@ public class DBConnection {
     private static final String URL = "jdbc:oracle:thin:@localhost:1521/FREEPDB1";
 
     private static final String USER = "system"; 
-    
+
     // Le mot de passe configuré au lancement de Docker
     private static final String PASS = "SecretPassword123";
 

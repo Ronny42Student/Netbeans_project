@@ -1,81 +1,55 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.intranet.model;
 
-/**
- *
- * @author nrajaoar
- */
+import java.util.Date;
+
 public class User {
     private int id;
     private String username;
     private String email;
     private String password;
-    
+    private int currentLevel;
+    private String campusLocation;
+    private String role;
+    private Date etaDate;
+    private String avatarPath;
+
     public User() {}
-    
-    public User(String username, String email, String password)
-    {
+
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = "USER";
+    }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+    public int getCurrentLevel() { return currentLevel; }
+    public void setCurrentLevel(int currentLevel) { this.currentLevel = currentLevel; }
+    public String getCampusLocation() { return campusLocation; }
+    public void setCampusLocation(String campusLocation) { this.campusLocation = campusLocation; }
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
+    public Date getEtaDate() { return etaDate; }
+    public void setEtaDate(Date etaDate) { this.etaDate = etaDate; }
+
+    /**
+     * @return the avatarPath
+     */
+    public String getAvatarPath() {
+        return avatarPath;
     }
 
     /**
-     * @return the id
+     * @param avatarPath the avatarPath to set
      */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
     }
 }
