@@ -1,0 +1,53 @@
+sudo systemctl start docker
+sudo systemctl enable docker
+
+
+# installation et lancement oracle database
+
+docker run -d \
+  -p 1521:1521 \
+  -e ORACLE_PASSWORD=SecretPassword123 \
+  -v oracle-data:/opt/oracle/oradata \
+  --name oracle-db \
+  gvenzl/oracle-free:latest
+
+-d: Fait tourner la base de donnee en arriere-plan
+-p 1521:1521: ouvre le port standard d'Oracle pour que le code java puisse s'y connecter
+-v oracle-data...: cree une volume persistant. Meme si on supprime le conteneur, les tables et
+utilisateurs java seront sauvegardes sur la VM.
+
+
+docker ps : verification si tout fonctionne
+
+*** si on veut entrer dans l'environnement ou oracle est installe, on doit executer cette
+commande pour ouvrir un terminal a l'interieur du conteneur:
+
+- "docker exec -it oracle-db /bin/bash"
+
+
+*** Suivre les avencements de l'installation en temps reel, affichage des logs avec cette
+commande:
+
+- "docker logs -f oracle-db"
+
+
+*** stopper docker
+- sudo systemctl stop docker
+- sudo systemctl stop docker.socket
+
+
+
+*** Execution du code sql dans oracle-db, dans un conteneur docker sous cette commande:
+
+docker exec -it oracle-db sqlplus system/SecretPassword123@FREEPDB1
+
+*** lancement du base de donnee
+
+- docker start oracle-db
+
+
+*** afficher les tables:
+
+SELECT table_name FROM user_tables;
+DESCRIBE users;
+SELECT * FROM users;
