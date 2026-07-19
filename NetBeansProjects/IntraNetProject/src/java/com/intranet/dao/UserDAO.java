@@ -127,7 +127,7 @@ public class UserDAO {
     }
 
     public boolean deactivateUser(int userId) {
-        String sql = "UPDATE users SET active = 0 WHERE id = ?";
+        String sql = "DELETE FROM users WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, userId);
